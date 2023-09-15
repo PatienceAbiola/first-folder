@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> grid3css</title>
+    <style>
+     .wrapper{
+        display:grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-gap: 1em;
+        grid-auto-rows:minmax(100px,auto);
+        justify-items: stretch;
+        align-items: stretch;
+        /* fr is prefered to % in this cases to avoid width issues*/
+        }
+    .wrapper > div{
+    background: grey;
+    padding: 1em;
+  }
+  .wrapper > div:nth-child(odd){
+    background: lightgray;
+  }
+  
+  .box1{
+   /* align-self: start;*/
+   grid-column: 1/3;
+   grid-row: 1/3;
+  }
+  .box2{
+    align-self: end;
+    grid-column: 3;
+    grid-row: 1/3;
+  }
+  box3{
+    /*align-self: end;*/
+    grid-column: 2/4;
+    grid-row: 3;
+  }
+  .box4{
+   /*align-self: start;*/
+   grid-column: 1;
+    grid-row: 2/4;
+  }
+  
+    </style>
+</head>
+<body>
+ <div class="wrapper">
+    <div class="box1"> one</div>
+    <div class="box2"> two</div>
+    <div class="box3"> three</div>
+    <div class="box4"> four</div>
+    
+ </div>
+</body>
+
+</html>
